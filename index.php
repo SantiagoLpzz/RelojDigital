@@ -7,7 +7,7 @@
     <style>
         body {
             margin: 0;
-            padding:20;
+            padding:20px;
             display: flex;
             justify-content: center;
             align-items: center;
