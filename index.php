@@ -38,44 +38,24 @@
             const minutes = String(now.getMinutes()).padStart(2, '0');
             const seconds = String(now.getSeconds()).padStart(2, '0');
 
-            // Referencias a los elementos
             const messageElement = document.getElementById('message');
             const imageElement = document.getElementById('image');
 
            
             if (now.getHours() >= 5 && now.getHours() < 12) {
                 document.body.style.backgroundColor = 'skyblue';
-<<<<<<< HEAD
-                document.body.innerHTML = `
-                    <div>
-                        <p style="color: white; font-size: 1.5rem;">BUENOS DÍAS ${hours}:${minutes}:${seconds}</p>
-                        <img src="https://i.pinimg.com/736x/dc/ee/97/dcee972af488b1b485543c12a360a0d2.jpg" >
-                    </div>
-                `;
-            } 
-            else if (now.getHours() >= 12 && now.getHours() < 19)
-            {
-                document.body.style.backgroundColor = 'Orange'; 
-                document.body.innerHTML = '
-                <div> 
-                <p style = "color: white; font-size: 1.5rem;"> BUENAS TARDES ${hours}:${minutes}:${seconds}</p>
-
-                </div>
-                ';
-            }
-            
-            else {
-=======
                 messageElement.textContent = `BUENOS DÍAS ${hours}:${minutes}:${seconds}`;
                 imageElement.src = "https://i.pinimg.com/736x/dc/ee/97/dcee972af488b1b485543c12a360a0d2.jpg";
                 imageElement.style.display = 'block';
-            } else if (now.getHours() >= 12 && now.getHours() < 19) {
+            }
+
+            else if (now.getHours() >= 12 && now.getHours() < 19) {
                 document.body.style.backgroundColor = 'orange';
                 messageElement.textContent = `BUENAS TARDES ${hours}:${minutes}:${seconds}`;
-                imageElement.src = ""; 
-                imageElement.style.display = 'none';
-            } else {
->>>>>>> caa8799e37098ca149212e8b1eb9ca6d534b4a14
+                
+            }
+
+            else {
                 document.body.style.backgroundColor = 'darkblue';
                 messageElement.textContent = `BUENAS NOCHES ${hours}:${minutes}:${seconds}`;
                 imageElement.src = "https://misimagenesdebuenasnoches.com/wp-content/uploads/2021/09/buenas-noches-piolin-durmiendo.jpg";
