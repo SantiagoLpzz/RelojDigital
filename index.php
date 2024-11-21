@@ -50,7 +50,7 @@
                 document.body.innerHTML = '
                 <div> 
                 <p style = "color: white; font-size: 1.5rem;"> BUENAS TARDES ${hours}:${minutes}:${seconds}</p>
-                <img src="https://i.pinimg.com/736x/dc/ee/97/dcee972af488b1b485543c12a360a0d2.jpg" >
+
                 </div>
                 ';
             }
