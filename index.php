@@ -35,12 +35,22 @@
           
             document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
             
-            if (now.getHours() >= 5 && now.getHours() < 20) {
+            if (now.getHours() >= 5 && now.getHours() < 12) {
                 document.body.style.backgroundColor = 'skyblue';
                 document.body.innerHTML = `
                     <div>
                         <p style="color: white; font-size: 1.5rem;">BUENOS DÍAS ${hours}:${minutes}:${seconds}</p>
                         <img src="https://i.pinimg.com/736x/dc/ee/97/dcee972af488b1b485543c12a360a0d2.jpg" >
+                    </div>
+                `;
+            } else if (now.getHours() >= 12 && now.getHours() < 19) {
+                
+            } else {
+                document.body.style.backgroundColor = 'darkblue';
+                document.body.innerHTML = `
+                    <div>
+                        <p style="color: white; font-size: 1.5rem;">BUENAS NOCHES ${hours}:${minutes}:${seconds}</p>
+                        <img src="https://misimagenesdebuenasnoches.com/wp-content/uploads/2021/09/buenas-noches-piolin-durmiendo.jpg" >
                     </div>
                 `;
             }
