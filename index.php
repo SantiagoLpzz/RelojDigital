@@ -7,7 +7,7 @@
     <style>
         body {
             margin: 0;
-            padding:20px;
+            padding: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -15,15 +15,23 @@
             height: 100vh;
             font-family: Arial, sans-serif;
             text-align: center;
+            margin-top: 20px;
         }
-        #clock {
-            font-size: 3rem;
+        #message {
+            font-size: 2rem; 
+            color: white;
+            margin-bottom: 20px; 
+        }
+        img {
+            margin-top: 20px;
+            max-width: 50%;
+            height: auto;
         }
     </style>
 </head>
 <body>
-
-    <div id="clock">00:00:00</div>
+    <div id="message"></div> 
+    <img id="image" src="" alt="" style="display: none;"> 
 
     <script>
         function updateClock() {
@@ -32,33 +40,33 @@
             const minutes = String(now.getMinutes()).padStart(2, '0');
             const seconds = String(now.getSeconds()).padStart(2, '0');
 
-          
-            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+            const messageElement = document.getElementById('message');
+            const imageElement = document.getElementById('image');
+
+            console.log(now.getHours());
+
+            const timeString = `${hours}:${minutes}:${seconds}`;
             
             if (now.getHours() >= 5 && now.getHours() < 12) {
                 document.body.style.backgroundColor = 'skyblue';
-                document.body.innerHTML = `
-                    <div>
-                        <p style="color: white; font-size: 1.5rem;">BUENOS DÍAS ${hours}:${minutes}:${seconds}</p>
-                        <img src="https://i.pinimg.com/736x/dc/ee/97/dcee972af488b1b485543c12a360a0d2.jpg" >
-                    </div>
-                `;
+                messageElement.textContent = `BUENOS DÍAS ${timeString}`;
+                imageElement.src = "https://i.pinimg.com/736x/dc/ee/97/dcee972af488b1b485543c12a360a0d2.jpg";
+                imageElement.style.display = 'block'; 
             } else if (now.getHours() >= 12 && now.getHours() < 19) {
-                
+                document.body.style.backgroundColor = 'orange';
+                messageElement.textContent = `BUENAS TARDES ${timeString}`;
+                imageElement.src = ""; 
+                imageElement.style.display = 'none'; 
             } else {
                 document.body.style.backgroundColor = 'darkblue';
-                document.body.innerHTML = `
-                    <div>
-                        <p style="color: white; font-size: 1.5rem;">BUENAS NOCHES ${hours}:${minutes}:${seconds}</p>
-                        <img src="https://misimagenesdebuenasnoches.com/wp-content/uploads/2021/09/buenas-noches-piolin-durmiendo.jpg" >
-                    </div>
-                `;
+                messageElement.textContent = `BUENAS NOCHES ${timeString}`;
+                imageElement.src = "https://misimagenesdebuenasnoches.com/wp-content/uploads/2021/09/buenas-noches-piolin-durmiendo.jpg";
+                imageElement.style.display = 'block'; 
             }
         }
 
-        setInterval(updateClock, 1000);
-        updateClock();
+        setInterval(updateClock, 1000); 
+        updateClock();  
     </script>
-
 </body>
 </html>
