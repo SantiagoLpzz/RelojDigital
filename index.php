@@ -25,6 +25,7 @@
         img {
             margin-top: 20px;
             max-width: 50%;
+
             height: auto;
         }
     </style>
@@ -32,6 +33,7 @@
 <body>
     <div id="message"></div> 
     <img id="image" src="" alt="" style="display: none;"> 
+
 
     <script>
         function updateClock() {
@@ -62,6 +64,7 @@
                 messageElement.textContent = `BUENAS NOCHES ${timeString}`;
                 imageElement.src = "https://misimagenesdebuenasnoches.com/wp-content/uploads/2021/09/buenas-noches-piolin-durmiendo.jpg";
                 imageElement.style.display = 'block'; 
+
             }
         }
 
