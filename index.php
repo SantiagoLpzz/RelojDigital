@@ -57,8 +57,8 @@
             } else if (now.getHours() >= 12 && now.getHours() < 19) {
                 document.body.style.backgroundColor = 'orange';
                 messageElement.textContent = `BUENAS TARDES ${timeString}`;
-                imageElement.src = ""; 
-                imageElement.style.display = 'none'; 
+                imageElement.src = "https://pbs.twimg.com/media/DH77UGdXsAEeSpK.jpg"; 
+                imageElement.style.display = 'block'; 
             } else {
                 document.body.style.backgroundColor = 'darkblue';
                 messageElement.textContent = `BUENAS NOCHES ${timeString}`;
